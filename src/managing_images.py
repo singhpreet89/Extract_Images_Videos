@@ -4,17 +4,17 @@ import shutil
 import pathlib
 import sys
 
-class Move_images:
+class Managing_images:
     
     def __init__(self):
         self.SOURCE_DIRECTORY = 'directories'
         self.TEMP = 'temp'
         self.DESTINITION_DIRECTORY = 'images'
-        self.MINIMUM_SIZE = 20
-        self.EXCEPTIONS = dict()                                    # To store all the exceptions
-        
-    def move(self):
-       # Moving all the files from "directories" directory to "temp" directory 
+        self.MINIMUM_SIZE = 20                  # Images with a minimum of 20kb will be selected
+        self.EXCEPTIONS = dict()                # To store all the exceptions
+    
+    ########## Copying all the files from "directories" directory to "temp" directory ##########
+    def copy_to_temp(self):
         try:       
             for root, dirs, files in os.walk(self.SOURCE_DIRECTORY):
                 for file in files:
@@ -23,10 +23,10 @@ class Move_images:
         except:
             print(f'\n*****\nALERT for FILE: {file}\nException: {sys.exc_info()[1]}\nException type: {sys.exc_info()[0]}\n*****\n')
             self.EXCEPTIONS[f'File: {str(file)}'] = f'Exception type: {sys.exc_info()[0]}, {sys.exc_info()[1]}'
-    
+        
+    def move_jpg(self):
         os.chdir(os.path.normpath(os.getcwd() + os.sep + self.TEMP))
         
-        ########## Making sure only the .jpg and .jpeg files are moved to the "images" directory ##########
         for file in glob.glob('*.jpg'):
             try:
                 # Discarding all the files which are less than 20KB in size
@@ -35,7 +35,7 @@ class Move_images:
             except:
                 # print(f'\n*****\nALERT for FILE: {file}\nException: {sys.exc_info()[1]}\nException type: {sys.exc_info()[0]}\n*****\n')
                 self.EXCEPTIONS[f'File: {str(file)}'] = f'Exception type: {sys.exc_info()[0]}, {sys.exc_info()[1]}'
-            
+                
         for file in glob.glob('*.jpeg'):
             try:
                 # Discarding all the files which are less than 20KB in size
@@ -45,6 +45,11 @@ class Move_images:
                 # print(f'\n*****\nALERT for FILE: {file}\nException: {sys.exc_info()[1]}\nException type: {sys.exc_info()[0]}\n*****\n')
                 self.EXCEPTIONS[f'File: {str(file)}'] = f'Exception type: {sys.exc_info()[0]}, {sys.exc_info()[1]}'
                 
+        os.chdir(os.path.normpath(os.getcwd() + os.sep + '..'))
+         
+    def move_jfif(self):
+        os.chdir(os.path.normpath(os.getcwd() + os.sep + self.TEMP))
+        
         for file in glob.glob('*.jfif'):
             try:
                 # Discarding all the files which are less than 20KB in size
@@ -53,16 +58,22 @@ class Move_images:
             except:
                 # print(f'\n*****\nALERT for FILE: {file}\nException: {sys.exc_info()[1]}\nException type: {sys.exc_info()[0]}\n*****\n')
                 self.EXCEPTIONS[f'File: {str(file)}'] = f'Exception type: {sys.exc_info()[0]}, {sys.exc_info()[1]}'
-        ####################################################################################################
         
-        ######### Deleting all the files from the "temp" directory
+        os.chdir(os.path.normpath(os.getcwd() + os.sep + '..'))
+           
+    ######### Deleting all the files from the "temp" directory to save space ##########
+    def delete_temp_directory(self):
+        os.chdir(os.path.normpath(os.getcwd() + os.sep + self.TEMP))
+        
         for file in  glob.glob('*'):
             try: 
                 os.remove(file)
             except:
                 # print(f'\n*****\nALERT for FILE: {file}\nException: {sys.exc_info()[1]}\nException type: {sys.exc_info()[0]}\n*****\n')
                 self.EXCEPTIONS[f'File: {str(file)}'] = f'Exception type: {sys.exc_info()[0]}, {sys.exc_info()[1]}'
-     
+        
+        os.chdir(os.path.normpath(os.getcwd() + os.sep + '..'))
+    
     ########## Checking all the exceptions if required ##########          
     def check_exceptions(self):   
         if self.EXCEPTIONS:
@@ -72,7 +83,10 @@ class Move_images:
             print("\n")
         else:
             print("\nComplete.....\n")
-        
-obj = Move_images()
-obj.move()
-obj.check_exceptions()
+            
+    def boot(self):
+        self.copy_to_temp()
+        self.move_jpg()
+        self.move_jfif()
+        self.delete_temp_directory()
+        self.check_exceptions()
