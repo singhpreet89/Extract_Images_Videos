@@ -1,5 +1,5 @@
-from src.managing_images import Managing_images
+from src.extract import Extract
 
 if __name__ == "__main__":
-    obj = Managing_images()
+    obj = Extract()
     obj.boot()
