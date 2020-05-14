@@ -1,5 +1,5 @@
 # Extract_Images_Videos
-This tool extracts Images (.jpg, .jpeg, .jfif, .webp), convert .jfif and .jpeg formats to .jpeg and extracts Videos (.mp4) from the downloaded / saved ".html" pages.
+This tool extracts Images (.jpg, .jpeg, .jfif, .webp), convert the extracted .jfif and .webp formats to .jpeg and extracts Videos (.mp4) from the downloaded / saved ".html" pages.
 
 ## Installation & Requirements
 1. Install [Python 3](https://www.python.org/downloads/).
@@ -11,12 +11,13 @@ pip install Pillow
 3. Clone the Repository.
 
 ## Important notes
-1. A few file Samples including ***".jpg's"*** are provided along with this tool for testing.
-2. The value for variable ***self.MINIMUM_SIZE***  is set to ***"20"*** by default under *** ".env"*** file, indicating the minimum size of the ***"image"*** (i.e. 20kb) to be extracted. Change this value to ***"1"*** to include all the ***"image"*** files with size over 1kb.    
+1. A few samples including ***".jpg's"*** are provided for testing in the ***"input"*** directory.
+2. The value for variable ***self.MINIMUM_SIZE***  is set to ***"20"*** by default under *** ".env"*** file, indicating the minimum size of the ***"image"***  to be extracted is 20kb.
+3. Update the ***MINIMUM_SIZE = 1*** in ***".env"*** file to include all the ***"image"*** files irrespective of their size. 
 ```bash 
 MINIMUM_SIZE = 20
 ```
-3. Images are extracted to the ***"output/images"*** directory and videos are extracted to the ***"output/videos"*** directory, ***temp*** directory is used as a temporary storage to keep the initially extracted files and are deleted at eventually.
+4. Images are extracted to the ***"output/images"*** directory and videos are extracted to the ***"output/videos"*** directory, ***temp*** directory is automatically created and is used as a temporary storage and its content is deleted when the program finishes execution.
 
 ## Running the application
 1. Copy the saved ***".html"*** pages or any directories containing images and videos to the ***"input"*** directory. 
