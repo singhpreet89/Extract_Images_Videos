@@ -63,7 +63,7 @@ class Extract:
             except:
                 # print(f'\n*****\nALERT for FILE: {file}\nException: {sys.exc_info()[1]}\nException type: {sys.exc_info()[0]}\n*****\n')
                 self.EXCEPTIONS[f'File: {str(file)}'] = f'Exception type: {sys.exc_info()[0]}, {sys.exc_info()[1]}'
-        print("\nTemporary files deleted.....")
+        print("Temporary files deleted.....")
               
     def check_exceptions(self):   
         if self.EXCEPTIONS:
