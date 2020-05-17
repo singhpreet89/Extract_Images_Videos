@@ -1,5 +1,5 @@
 # Extract_Images_Videos
-This tool extracts Images (.jpg, .jpeg, .jfif, .webp), convert the extracted .jfif and .webp formats to .jpeg and extracts Videos (.mp4) from the downloaded / saved ".html" pages.
+This tool extracts .jpg, .jpeg, .jfif, .webp and .png images, convert the extracted .jfif, .webp and .png formats to .jpeg and extracts Videos (.mp4) from the downloaded / saved ".html" pages.
 
 ## Installation & Requirements
 1. Install [Python 3](https://www.python.org/downloads/).
@@ -12,12 +12,12 @@ pip install Pillow
 
 ## Important notes
 1. A few samples including ***".jpg's"*** are provided for testing in the ***"input"*** directory.
-2. The value for variable ***self.MINIMUM_SIZE***  is set to ***"20"*** by default under *** ".env"*** file, indicating the minimum size of the ***"image"***  to be extracted is 20kb.
-3. Update the ***MINIMUM_SIZE = 1*** in ***".env"*** file to include all the ***"image"*** files irrespective of their size. 
+2. The value for variable ***MINIMUM_SIZE***  is ***"20"*** by default and it provided under the *** ".env"*** file, indicating the minimum size of an ***"image"***  to be extracted is 20kb.
+3. Update the ***MINIMUM_SIZE = 1*** in the ***".env"*** file to include all the ***"images"*** irrespective of their size. 
 ```bash 
-MINIMUM_SIZE = 20
+MINIMUM_SIZE = 1
 ```
-4. Images are extracted to the ***"output/images"*** directory and videos are extracted to the ***"output/videos"*** directory, ***temp*** directory is automatically created and is used as a temporary storage and its content is deleted when the program finishes execution.
+4. Images are extracted to the ***"output/images"*** directory and videos are extracted to the ***"output/videos"*** directory. These directories are automatically created on the fly.
 
 ## Running the application
 1. Copy the saved ***".html"*** pages or any directories containing images and videos to the ***"input"*** directory. 

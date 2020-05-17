@@ -6,7 +6,6 @@ import sys
 from pathlib import Path
 from functools import reduce
 from dotenv import load_dotenv
-from tqdm import tqdm
 
 class Extract:
     def __init__(self):
