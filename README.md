@@ -1,5 +1,26 @@
 # Extract_Images_Videos
-This tool extracts .jpg, .jpeg, .jfif, .webp and .png images, convert the extracted .jfif, .webp and .png formats to .jpeg and extracts Videos (.mp4) from the downloaded / saved ".html" pages.
+<p align="center">
+	<a href="https://forthebadge.com" alt="MADE WITH: PYTHON">
+		<img src="https://forthebadge.com/images/badges/made-with-python.svg" />
+	</a>
+</p>
+<p align="center">
+  <a href="https://badgen.net" alt="Powered by: Python 3.8.2">
+    <img src="https://badgen.net/badge/Powered%20by/Python%203.8.2/3570A0" />
+  </a>
+  <a href="https://badgen.net" alt="Dependency: Pillow">
+    <img src="https://badgen.net/badge/Pillow/7.1.2/148024" />
+  </a>
+  <a href="https://badgen.net" alt="Dependency: python-dotenv">
+    <img src="https://badgen.net/badge/python-dotenv/0.13.0/148024" />
+  </a>
+	<a href="https://opensource.org/licenses/MIT" alt="License: MIT">
+		<img src="https://img.shields.io/badge/License-MIT-green.svg" />
+	</a>
+</p>
+<p align="center">
+  <strong>This tool extracts .jpg, .jpeg, .jfif, .webp and .png images, convert the extracted .jfif, .webp and .png formats to .jpeg and extracts Videos (.mp4) from the downloaded / saved ".html" pages.</strong>
+</p>
 
 ## Installation & Requirements
 1. Install [Python 3](https://www.python.org/downloads/).
