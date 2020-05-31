@@ -1,18 +1,18 @@
 # Extract_Images_Videos
 <p align="center">
-	<a href="https://forthebadge.com" alt="MADE WITH: PYTHON">
+	<a href="https://www.python.org/" alt="MADE WITH: PYTHON">
 		<img src="https://forthebadge.com/images/badges/made-with-python.svg" />
 	</a>
 </p>
 <p align="center">
-  <a href="https://badgen.net" alt="Powered by: Python 3.8.2">
-    <img src="https://badgen.net/badge/Powered%20by/Python%203.8.2/3570A0" />
+  <a href="https://www.python.org/downloads/" alt="Powered by: Python 3.8.2">
+    <img src="https://badgen.net/badge/Powered%20by/Python%20v3.8.2/3570A0" />
   </a>
-  <a href="https://badgen.net" alt="Dependency: Pillow">
-    <img src="https://badgen.net/badge/Pillow/7.1.2/148024" />
+  <a href="https://pypi.org/project/Pillow/" alt="Dependency: Pillow">
+    <img src="https://badgen.net/badge/Pillow/v7.1.2/148024" />
   </a>
-  <a href="https://badgen.net" alt="Dependency: python-dotenv">
-    <img src="https://badgen.net/badge/python-dotenv/0.13.0/148024" />
+  <a href="https://pypi.org/project/python-dotenv/" alt="Dependency: python-dotenv">
+    <img src="https://badgen.net/badge/python-dotenv/v0.13.0/148024" />
   </a>
 	<a href="https://opensource.org/licenses/MIT" alt="License: MIT">
 		<img src="https://img.shields.io/badge/License-MIT-green.svg" />
