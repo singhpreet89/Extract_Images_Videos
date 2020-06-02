@@ -8,6 +8,9 @@
   <a href="https://www.python.org/downloads/" alt="Powered by: Python 3.8.2">
     <img src="https://badgen.net/badge/Powered%20by/Python%20v3.8.2/3570A0" />
   </a>
+  <a href="https://pypi.org/project/pipenv/" alt="Dependency: pipenv">
+    <img src="https://badgen.net/badge/pipenv/v2020.5.28/148024" />
+  </a>
   <a href="https://pypi.org/project/Pillow/" alt="Dependency: Pillow">
     <img src="https://badgen.net/badge/Pillow/v7.1.2/148024" />
   </a>
