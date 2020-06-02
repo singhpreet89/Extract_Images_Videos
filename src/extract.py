@@ -24,8 +24,9 @@ class Extract:
                 os.makedirs(os.path.normpath(os.path.join(os.getcwd(), self.DESTINATION_DIRECTORY, 'images')))
             if not os.path.exists(os.path.normpath(os.path.join(os.getcwd(), self.DESTINATION_DIRECTORY, 'videos'))):
                 os.makedirs(os.path.normpath(os.path.join(os.getcwd(), self.DESTINATION_DIRECTORY, 'videos')))
-        except:
-            print(f'\n*****\nALERT: {sys.exc_info()[1]}\nException type: {sys.exc_info()[0]}\n*****')
+        except Exception as ex:
+            print("\n******************** ALERT ********************")
+            print(f'PATH Exception type: {sys.exc_info()[0]}, {ex}')
             sys.exit()
 
     def save(self):
@@ -54,8 +55,8 @@ class Extract:
                         shutil.copy2(file, os.path.normpath(os.path.join(directory, 'videos', file_name)))
                         print(f'{count}. {file_name} =====> output/videos/{file_name}\n----------------------------------------------------------------------------------------')
                         count += 1
-                except:
-                    self.EXCEPTIONS[f'File: {str(file)}'] = f'EXTRACTION Exception type: {sys.exc_info()[0]}, {sys.exc_info()[1]}'
+                except Exception as ex:
+                    self.EXCEPTIONS[f'File: {str(file)}'] = f'EXTRACTION Exception type: {sys.exc_info()[0]}, {ex}'
                 
     def check_exceptions(self):   
         if self.EXCEPTIONS:
